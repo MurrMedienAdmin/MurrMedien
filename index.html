@@ -39,19 +39,26 @@
               --text: rgba(0, 0, 0, 0.88);
               --muted: rgba(0, 0, 0, 0.58);
               --hairline: rgba(0, 0, 0, 0.12);
-              --radius: 16px;
-              /* ambient gradients (apple-like) */
-              --g1: rgba(0, 113, 227, 0.18);
-              --g2: rgba(88, 86, 214, 0.18);
-              --g3: rgba(52, 199, 89, 0.14);
-              /* accent for hover/active */
-              --accent: rgba(0, 113, 227, 1);
+              /* Brand colors */
+              --brand-darkblue: #1c2e4b;
+              --brand-lightblue: #619db6;
+              --brand-rose: #a6495f;
+              /* Ambient gradients from brand colors (light) */
+              --g1: color-mix(in srgb, var(--brand-lightblue) 38%, transparent);
+              --g2: color-mix(in srgb, var(--brand-rose) 26%, transparent);
+              --g3: color-mix(in srgb, var(--brand-darkblue) 22%, transparent);
+              /* Apple blue for interactive states */
+              --apple-blue: #0071e3;
+              --apple-blue-hover: #0077ed;
               /* toggle glass */
               --toggle-glass: rgba(255, 255, 255, 0.65);
               --toggle-stroke: rgba(0, 0, 0, 0.12);
               --toggle-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
               --switch-track: rgba(0, 0, 0, 0.18);
               --switch-knob: #ffffff;
+              /* CTA ultra subtle glass */
+              --cta-glass: rgba(255, 255, 255, 0.22);
+              --cta-stroke: rgba(0, 0, 0, 0.14);
           }
 
           [data-theme="dark"] {
@@ -59,14 +66,17 @@
               --text: rgba(255, 255, 255, 0.92);
               --muted: rgba(255, 255, 255, 0.65);
               --hairline: rgba(255, 255, 255, 0.14);
-              --g1: rgba(0, 113, 227, 0.28);
-              --g2: rgba(88, 86, 214, 0.26);
-              --g3: rgba(52, 199, 89, 0.22);
+              /* Ambient gradients from brand colors (dark) */
+              --g1: color-mix(in srgb, var(--brand-lightblue) 46%, transparent);
+              --g2: color-mix(in srgb, var(--brand-rose) 34%, transparent);
+              --g3: color-mix(in srgb, var(--brand-darkblue) 38%, transparent);
               --toggle-glass: rgba(255, 255, 255, 0.08);
               --toggle-stroke: rgba(255, 255, 255, 0.14);
               --toggle-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
               --switch-track: rgba(255, 255, 255, 0.22);
               --switch-knob: rgba(255, 255, 255, 0.95);
+              --cta-glass: rgba(255, 255, 255, 0.08);
+              --cta-stroke: rgba(255, 255, 255, 0.14);
           }
 
           /* =========================
@@ -85,8 +95,8 @@
               margin: 0;
               font-family: "Jost", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
               color: var(--text);
-              /* Apple-like ambient background */
-              background: radial-gradient(900px 520px at 15% 12%, var(--g1), transparent 60%), radial-gradient(820px 640px at 85% 16%, var(--g2), transparent 65%), radial-gradient(720px 640px at 50% 90%, var(--g3), transparent 65%), var(--bg);
+              /* Brand ambient background */
+              background: radial-gradient(900px 520px at 16% 12%, var(--g1), transparent 62%), radial-gradient(820px 640px at 86% 18%, var(--g2), transparent 66%), radial-gradient(720px 640px at 50% 92%, var(--g3), transparent 66%), var(--bg);
           }
 
           /* =========================
@@ -148,7 +158,7 @@
           }
 
           /* =========================
-           CTA BUTTON (glass -> accent on hover)
+           CTA BUTTON (ultra subtle glass -> blue on hover/active)
         ========================== */
           .cta {
               display: inline-flex;
@@ -156,42 +166,37 @@
               justify-content: center;
               padding: 12px 18px;
               border-radius: 999px;
-              background: rgba(255, 255, 255, 0.6);
+              background: var(--cta-glass);
               color: var(--text);
-              border: 1px solid var(--hairline);
+              border: 1px solid var(--cta-stroke);
               backdrop-filter: blur(12px);
               -webkit-backdrop-filter: blur(12px);
               font-size: 14px;
               letter-spacing: 0.01em;
               text-decoration: none;
               user-select: none;
-              transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+              box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+              transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease, filter 0.2s ease;
           }
 
-          [data-theme="dark"] .cta {
-              background: rgba(255, 255, 255, 0.08);
-              color: var(--text);
-              border-color: rgba(255, 255, 255, 0.14);
-          }
+              .cta:hover,
+              .cta:focus-visible {
+                  background: linear-gradient(180deg, var(--apple-blue-hover), var(--apple-blue));
+                  color: #ffffff;
+                  border-color: rgba(0, 113, 227, 0.45);
+                  box-shadow: 0 12px 34px rgba(0, 113, 227, 0.35);
+                  transform: translateY(-1px);
+              }
 
-          .cta:hover,
-          .cta:focus-visible {
-              background: linear-gradient(180deg, rgba(0, 113, 227, 0.95), rgba(0, 113, 227, 0.75));
-              color: #ffffff;
-              border-color: rgba(0, 113, 227, 0.4);
-              box-shadow: 0 12px 34px rgba(0, 113, 227, 0.35);
-              transform: translateY(-1px);
-          }
+              .cta:active {
+                  transform: translateY(0px);
+                  box-shadow: 0 8px 22px rgba(0, 113, 227, 0.35);
+              }
 
-          .cta:active {
-              transform: translateY(0px);
-              box-shadow: 0 8px 22px rgba(0, 113, 227, 0.35);
-          }
-
-          .cta:focus-visible {
-              outline: 3px solid rgba(0, 113, 227, 0.45);
-              outline-offset: 3px;
-          }
+              .cta:focus-visible {
+                  outline: 3px solid rgba(0, 113, 227, 0.45);
+                  outline-offset: 3px;
+              }
 
           /* =========================
            FOOTER (clean legal)
@@ -222,8 +227,7 @@
               }
 
           /* =========================
-           GLASS TOGGLE (bottom-right)
-           Apple-like switch
+           GLASS TOGGLE (desktop bottom-right, mobile top-right)
         ========================== */
           .toggle-wrap {
               position: fixed;
@@ -240,6 +244,14 @@
               box-shadow: var(--toggle-shadow);
               backdrop-filter: blur(14px);
               -webkit-backdrop-filter: blur(14px);
+          }
+
+          @media (max-width: 640px) {
+              .toggle-wrap {
+                  top: 14px;
+                  bottom: auto;
+                  right: 14px;
+              }
           }
 
           .toggle-label {
@@ -305,20 +317,20 @@
 
         <main class="main">
             <div class="center">
-                <h1 class="title">Bald fertig...</h1>
+                <h1 class="title">Website in Arbeit…</h1>
                 <p class="subtitle">
                     Wir arbeiten gerade an unserem neuen Auftritt. Bis dahin erreicht ihr uns jederzeit per E-Mail.
                 </p>
-                <a class="cta" href="mailto:info@murrmedien.de">schreibe uns! :)</a>
+                <a class="cta" href="mailto:info@murrmedien.de">Schreibe uns! :)</a>
             </div>
         </main>
 
         <footer class="footer">
             <div class="footer-inner">
-                <div><strong>Murr Medien GbR</strong></div>
+                <div><strong>Murr Medien</strong></div>
                 <div>Amselweg 5, 71570 Oppenweiler</div>
                 <div><a href="mailto:info@murrmedien.de">info@murrmedien.de</a></div>
-                <div>Gesellschafter: Luca Krämer, Moritz Stoppel</div>
+                <div>Gesellschafter: Luca Krämer &amp; Moritz Stoppel</div>
             </div>
         </footer>
     </div>
@@ -342,14 +354,12 @@
         function apply(theme) {
             root.setAttribute("data-theme", theme);
             localStorage.setItem("theme", theme);
-
             const isDark = theme === "dark";
             sw.dataset.on = String(isDark);
             sw.setAttribute("aria-checked", String(isDark));
             label.textContent = isDark ? "Dark" : "Light";
         }
 
-        // initial theme: saved -> else system
         const saved = localStorage.getItem("theme");
         if (saved === "light" || saved === "dark") {
             apply(saved);
