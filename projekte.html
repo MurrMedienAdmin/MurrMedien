@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projekte – Murr Medien</title>
+
+    <link rel="icon" href="./assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        @font-face {
+            font-family: "Jost";
+            src: url("./fonts/Jost-Regular.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --bg: #f5f5f7;
+            --text: rgba(0, 0, 0, 0.88);
+            --muted: rgba(0, 0, 0, 0.58);
+            --hairline: rgba(0, 0, 0, 0.12);
+            --brand-darkblue: #1c2e4b;
+            --brand-lightblue: #619db6;
+            --brand-rose: #a6495f;
+            --g1: color-mix(in srgb, var(--brand-lightblue) 36%, transparent);
+            --g2: color-mix(in srgb, var(--brand-rose) 26%, transparent);
+            --g3: color-mix(in srgb, var(--brand-darkblue) 22%, transparent);
+            --apple-blue: #0071e3;
+            --glass: rgba(255, 255, 255, 0.18);
+            --glass-border: rgba(0, 0, 0, 0.14);
+        }
+
+        [data-theme="dark"] {
+            --bg: #0b0c0f;
+            --text: rgba(255, 255, 255, 0.92);
+            --muted: rgba(255, 255, 255, 0.65);
+            --hairline: rgba(255, 255, 255, 0.14);
+            --g1: color-mix(in srgb, var(--brand-lightblue) 44%, transparent);
+            --g2: color-mix(in srgb, var(--brand-rose) 34%, transparent);
+            --g3: color-mix(in srgb, var(--brand-darkblue) 38%, transparent);
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.14);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Jost", system-ui, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(900px 520px at 15% 12%, var(--g1), transparent 62%),
+                radial-gradient(820px 640px at 85% 18%, var(--g2), transparent 66%),
+                radial-gradient(720px 640px at 50% 92%, var(--g3), transparent 66%),
+                var(--bg);
+        }
+
+        .page {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        /* HEADER */
+        header {
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo { height: 40px; }
+
+        nav {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: inline-flex;
+            padding: 7px 14px;
+            border-radius: 999px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(14px);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background: var(--apple-blue);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 8px 24px rgba(0,113,227,0.28);
+        }
+
+        /* MAIN */
+        main {
+            padding: 56px 24px 96px;
+            max-width: 760px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--brand-lightblue);
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 5vw, 44px);
+            font-weight: 400;
+            line-height: 1.18;
+            margin: 0 0 20px;
+        }
+
+        .lead {
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--muted);
+            max-width: 520px;
+            margin: 0 0 52px;
+        }
+
+        /* HERO PROJECT */
+        .hero-project {
+            display: block;
+            text-decoration: none;
+            color: var(--text);
+            border-radius: 22px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(14px);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 16px;
+        }
+
+        .hero-project:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 56px rgba(0,0,0,0.1);
+        }
+
+        .hero-project:hover .hero-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Screenshot placeholder – ersetzt durch echtes Bild sobald vorhanden */
+        .hero-screenshot {
+            width: 100%;
+            aspect-ratio: 16 / 7;
+            object-fit: cover;
+            display: block;
+            background: linear-gradient(135deg, var(--brand-darkblue) 0%, var(--brand-lightblue) 100%);
+            position: relative;
+        }
+
+        .hero-screenshot-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg,
+                color-mix(in srgb, var(--brand-darkblue) 80%, transparent),
+                color-mix(in srgb, var(--brand-lightblue) 60%, transparent)
+            );
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-body {
+            padding: 24px 26px 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 16px;
+        }
+
+        .hero-tag {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--brand-lightblue);
+            margin-bottom: 8px;
+        }
+
+        .hero-title {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .hero-desc {
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--muted);
+            max-width: 440px;
+        }
+
+        .hero-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--muted);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .hero-arrow {
+            transition: transform 0.2s ease;
+        }
+
+        /* SMALL CARDS */
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin: 40px 0 18px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 14px;
+        }
+
+        .project-card {
+            display: block;
+            text-decoration: none;
+            color: var(--text);
+            padding: 22px 24px;
+            border-radius: 18px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(14px);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.09);
+            border-color: rgba(97,157,182,0.4);
+        }
+
+        .project-card:hover .card-arrow {
+            transform: translateX(3px);
+        }
+
+        .card-tag {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--brand-lightblue);
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            line-height: 1.65;
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-domain {
+            font-size: 12px;
+            color: var(--muted);
+            opacity: 0.7;
+        }
+
+        .card-arrow {
+            font-size: 14px;
+            color: var(--muted);
+            transition: transform 0.18s ease;
+        }
+
+        /* CTA */
+        .cta-block {
+            margin-top: 52px;
+            padding: 32px;
+            border-radius: 20px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(14px);
+            text-align: center;
+        }
+
+        .cta-block .cta-title {
+            font-size: 19px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .cta-block p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--muted);
+            margin: 0 auto 22px;
+            max-width: 420px;
+        }
+
+        .cta {
+            display: inline-flex;
+            padding: 12px 22px;
+            border-radius: 999px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(14px);
+            color: var(--text);
+            text-decoration: none;
+            font-family: "Jost", system-ui, sans-serif;
+            font-size: 15px;
+            transition: all 0.2s ease;
+        }
+
+        .cta:hover {
+            background: var(--apple-blue);
+            color: #fff;
+            box-shadow: 0 12px 34px rgba(0,113,227,0.35);
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--hairline);
+            padding: 18px;
+            font-size: 12.5px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        footer a { color: inherit; text-decoration: none; }
+        footer a:hover { color: var(--apple-blue); }
+
+        @media (max-width: 520px) {
+            header { padding: 18px; }
+            main { padding: 36px 18px 60px; }
+            .hero-body { flex-direction: column; align-items: flex-start; }
+            .cta-block { padding: 24px 18px; }
+        }
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+    <header>
+        <a href="./index.html">
+            <img src="./assets/logo.png" class="logo" alt="Murr Medien">
+        </a>
+        <nav>
+            <a href="./index.html">Start</a>
+            <a href="./ueber-uns.html">Über uns</a>
+            <a href="./projekte.html" class="active">Projekte</a>
+            <a href="./kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <p class="eyebrow">Projekte</p>
+        <h1>Was bisher entstand.</h1>
+        <p class="lead">
+            Jedes Projekt beginnt mit einem Gespräch. Was ihr hier seht, ist das
+            Ergebnis davon – Auftritte, die zu den Menschen dahinter passen.
+        </p>
+
+        <!-- HERO PROJECT -->
+        <a class="hero-project" href="https://www.sgos.de" target="_blank" rel="noopener">
+
+            <img class="hero-screenshot" src="assets/sgos_website_mockup.png" alt="SG Oppenweiler-Strümpfelbach Website">
+
+            <div class="hero-body">
+                <div>
+                    <div class="hero-tag">Webentwicklung · Verein</div>
+                    <div class="hero-title">SG Oppenweiler-Strümpfelbach</div>
+                    <div class="hero-desc">
+                        Ein moderner Webauftritt für den lokalen Sportverein – übersichtlich,
+                        mobil optimiert und einfach selbst pflegbar. Von der Struktur
+                        bis zum fertigen Launch aus einer Hand.
+                    </div>
+                </div>
+                <div class="hero-link">
+                    sgos.de <span class="hero-arrow">↗</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- HERO PROJECT 2 -->
+        <a class="hero-project" href="https://www.vereinsgaststaette-rohrbachtal.de" target="_blank" rel="noopener">
+
+            <img class="hero-screenshot" src="assets/Vereinsgastst%C3%A4tte%20Rohrbachtal%20mockup.png" alt="Vereinsgaststätte Rohrbachtal Website">
+
+            <div class="hero-body">
+                <div>
+                    <div class="hero-tag">Webentwicklung · Gastronomie</div>
+                    <div class="hero-title">Vereinsgaststätte Rohrbachtal</div>
+                    <div class="hero-desc">
+                        Website für eine Vereinsgaststätte in der Region – mit klarer
+                        Struktur, lokalem Charakter und allen Infos, die Gäste wirklich brauchen.
+                    </div>
+                </div>
+                <div class="hero-link">
+                    vereinsgaststaette-rohrbachtal.de <span class="hero-arrow">↗</span>
+                </div>
+            </div>
+        </a>
+
+        <!--
+            Weitere Projekte hier einfach als <a class="hero-project" ...> oder <a class="project-card" ...> ergänzen.
+        -->
+
+        <!-- CTA -->
+        <div class="cta-block">
+            <div class="cta-title">Euer Projekt ist das nächste?</div>
+            <p>
+                Wir freuen uns über neue Herausforderungen – egal ob Website,
+                Corporate Identity oder Printmedien.
+            </p>
+            <a class="cta" href="./kontakt.html">Projekt anfragen</a>
+        </div>
+
+    </main>
+
+    <footer>
+        Murr Medien GbR · Amselweg 5 · 71570 Oppenweiler ·
+        <a href="mailto:info@murrmedien.de">info@murrmedien.de</a> ·
+        Tel.: +49 155 66152739<br>
+        Gesellschafter: Luca Krämer, Moritz Stoppel
+    </footer>
+
+</div>
+
+<script>
+    const root = document.documentElement;
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    function applyTheme(prefersDark) {
+        root.setAttribute("data-theme", prefersDark ? "dark" : "light");
+    }
+    applyTheme(mediaQuery.matches);
+    mediaQuery.addEventListener("change", (e) => applyTheme(e.matches));
+</script>
+
+</body>
+</html>
