@@ -25,13 +25,13 @@
             --text: rgba(0, 0, 0, 0.88);
             --muted: rgba(0, 0, 0, 0.58);
             --hairline: rgba(0, 0, 0, 0.12);
-            --brand-darkblue: #1c2e4b;
-            --brand-lightblue: #619db6;
+            --brand-darkblue: #a6495f;
+            --brand-lightblue: #a6495f;
             --brand-rose: #a6495f;
             --g1: color-mix(in srgb, var(--brand-lightblue) 36%, transparent);
             --g2: color-mix(in srgb, var(--brand-rose) 26%, transparent);
             --g3: color-mix(in srgb, var(--brand-darkblue) 22%, transparent);
-            --apple-blue: #0071e3;
+            --apple-blue: #a6495f;
             --glass: rgba(255, 255, 255, 0.18);
             --glass-border: rgba(0, 0, 0, 0.14);
         }
@@ -201,7 +201,7 @@
         }
 
         .footer-logo {
-            height: 26px;
+            height: 36px;
             width: auto;
             align-self: flex-start;
             display: block;
@@ -299,28 +299,24 @@
         }
 
         .contact-card {
-            padding: 24px;
             border-radius: 20px;
             background: var(--glass);
             border: 1px solid var(--glass-border);
             backdrop-filter: blur(14px);
             display: flex;
-            gap: 16px;
-            align-items: flex-start;
+            flex-direction: column;
+            overflow: hidden;
         }
 
         .contact-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 999px;
+            width: 100%;
+            aspect-ratio: 5 / 6;
             object-fit: cover;
-            flex-shrink: 0;
-            border: 2px solid rgba(255,255,255,0.9);
-            outline: 1px solid rgba(0,0,0,0.1);
-            outline-offset: -2px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            background: #ddd;
+            object-position: top;
+            display: block;
         }
+
+        .contact-body { padding: 16px 20px 20px; }
 
         .contact-name {
             font-size: 15px;
@@ -429,7 +425,7 @@
         .field textarea:focus,
         .field select:focus {
             border-color: var(--apple-blue);
-            box-shadow: 0 0 0 3px rgba(0,113,227,0.12);
+            box-shadow: 0 0 0 3px rgba(166,73,95,0.12);
         }
 
         /* SELECT ARROW */
@@ -472,7 +468,7 @@
             background: var(--apple-blue);
             color: #fff;
             border-color: transparent;
-            box-shadow: 0 12px 34px rgba(0,113,227,0.35);
+            box-shadow: 0 12px 34px rgba(166,73,95,0.35);
         }
 
         /* ADDRESS BLOCK */
@@ -530,7 +526,7 @@
             header { padding: 18px; }
             main { padding: 36px 18px 60px; }
             .form-row { grid-template-columns: 1fr; }
-            .contact-card { flex-direction: column; }
+            .contact-grid { grid-template-columns: 1fr 1fr; }
             .footer-inner { flex-direction: column; gap: 32px; }
             .footer-cols { gap: 32px; }
             .header-left { visibility: hidden; }
@@ -604,7 +600,7 @@
         <div class="contact-grid">
             <div class="contact-card">
                 <img src="./assets/luca.png" class="contact-avatar" alt="Luca Krämer">
-                <div>
+                <div class="contact-body">
                     <div class="contact-name">Luca Krämer</div>
                     <div class="contact-role">Gesellschafter</div>
                     <div class="contact-links">
@@ -622,7 +618,7 @@
 
             <div class="contact-card">
                 <img src="./assets/moritz.png" class="contact-avatar" alt="Moritz Stoppel">
-                <div>
+                <div class="contact-body">
                     <div class="contact-name">Moritz Stoppel</div>
                     <div class="contact-role">Gesellschafter</div>
                     <div class="contact-links">

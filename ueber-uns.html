@@ -25,13 +25,13 @@
             --text: rgba(0, 0, 0, 0.88);
             --muted: rgba(0, 0, 0, 0.58);
             --hairline: rgba(0, 0, 0, 0.12);
-            --brand-darkblue: #1c2e4b;
-            --brand-lightblue: #619db6;
+            --brand-darkblue: #a6495f;
+            --brand-lightblue: #a6495f;
             --brand-rose: #a6495f;
             --g1: color-mix(in srgb, var(--brand-lightblue) 36%, transparent);
             --g2: color-mix(in srgb, var(--brand-rose) 26%, transparent);
             --g3: color-mix(in srgb, var(--brand-darkblue) 22%, transparent);
-            --apple-blue: #0071e3;
+            --apple-blue: #a6495f;
             --glass: rgba(255, 255, 255, 0.18);
             --glass-border: rgba(0, 0, 0, 0.14);
         }
@@ -201,7 +201,7 @@
         }
 
         .footer-logo {
-            height: 26px;
+            height: 36px;
             width: auto;
             align-self: flex-start;
             display: block;
@@ -368,28 +368,24 @@
         }
 
         .team-card {
-            padding: 22px;
             border-radius: 18px;
             background: var(--glass);
             border: 1px solid var(--glass-border);
             backdrop-filter: blur(14px);
             display: flex;
-            gap: 16px;
-            align-items: flex-start;
+            flex-direction: column;
+            overflow: hidden;
         }
 
         .team-avatar {
-            width: 68px;
-            height: 68px;
-            border-radius: 999px;
+            width: 100%;
+            aspect-ratio: 5 / 6;
             object-fit: cover;
-            flex-shrink: 0;
-            border: 2px solid rgba(255,255,255,0.9);
-            outline: 1px solid rgba(0,0,0,0.1);
-            outline-offset: -2px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            background: #ddd;
+            object-position: top;
+            display: block;
         }
+
+        .team-body { padding: 16px 18px 18px; }
 
         .team-name {
             font-size: 15px;
@@ -456,7 +452,7 @@
         .cta:hover {
             background: var(--apple-blue);
             color: #fff;
-            box-shadow: 0 12px 34px rgba(0,113,227,0.35);
+            box-shadow: 0 12px 34px rgba(166,73,95,0.35);
         }
 
         .footer-social-mobile { display: none; flex-direction: column; margin-top: 16px; }
@@ -465,7 +461,7 @@
         @media (max-width: 520px) {
             header { padding: 18px; }
             main { padding: 36px 18px 60px; }
-            .team-card { flex-direction: column; }
+            .team-grid { grid-template-columns: 1fr 1fr; }
             .cta-block { padding: 24px 20px; }
             .footer-inner { flex-direction: column; gap: 32px; }
             .footer-cols { gap: 32px; }
@@ -542,10 +538,7 @@
         <p class="section-label">Wie es begann</p>
         <div class="story">
             <p>
-                <strong>Murr Medien entstand 2025</strong> – nicht aus einem Businessplan,
-                sondern aus einer gemeinsamen Überzeugung: dass Unternehmen in der Region
-                einen Medienpartner verdienen, der wirklich zuhört. Einer, der nicht einfach
-                liefert, was bestellt wird, sondern mitdenkt, hinterfragt und gestaltet.
+                Murr Medien entstand 2025 – nicht aus einem klassischen Businessplan, sondern aus unserer gemeinsamen Motivation heraus, kreative Projekte für Unternehmen umzusetzen, auf die wir wirklich Lust haben. Aus der Überzeugung, dass Firmen in der Region einen Medienpartner verdienen, der zuhört, mitdenkt und ehrlich berät. Wir liefern nicht einfach das, was bestellt wird – wir hinterfragen, gestalten und entwickeln Lösungen, hinter denen wir selbst stehen.
             </p>
 
             <p>
@@ -561,11 +554,14 @@
 
         <p class="section-label">Was wir machen</p>
         <p class="leistungen-intro">
-            Wir begleiten Projekte von der ersten Skizze bis zur fertigen Umsetzung –
-            <strong>digital wie gedruckt</strong>. Unser Angebot halten wir bewusst offen,
+            Wir begleiten Projekte von der ersten Skizze bis zur fertigen Umsetzung. Unser Angebot halten wir bewusst offen,
             damit wir auf das eingehen können, was ein Projekt wirklich braucht –
             und nicht nur das, was in eine Kategorie passt.
         </p>
+        <p class="leistungen-intro">
+            Falls du dir trotzdem noch kein genaues Bild von unserer Arbeit machen kannst, findest du hier einen Überblick unseres Leistungsspektrums.
+        </p>
+
         <div class="leistungen-grid">
             <div class="leistung-item">
                 <div class="l-title">Webentwicklung</div>
@@ -583,6 +579,14 @@
                 <div class="l-title">Werbemittel</div>
                 <div class="l-desc">Alles, was euren Auftritt im Alltag sichtbar macht – von der Außenwerbung bis zum digitalen Format.</div>
             </div>
+            <div class="leistung-item">
+                <div class="l-title">Content & Medienproduktion</div>
+                <div class="l-desc">Fotos, Videos und Social-Media-Content, die eure Geschichte authentisch erzählen und eure Marke erlebbar machen.</div>
+            </div>
+            <div class="leistung-item">
+                <div class="l-title">Betreuung & Beratung</div>
+                <div class="l-desc">Wir begleiten euch ganzheitlich – von der strategischen Konzeption über die Umsetzung bis zur langfristigen Betreuung und Weiterentwicklung.</div>
+            </div>
         </div>
 
         <hr>
@@ -591,7 +595,7 @@
         <div class="team-grid">
             <div class="team-card">
                 <img src="./assets/luca.png" class="team-avatar" alt="Luca Krämer">
-                <div>
+                <div class="team-body">
                     <div class="team-name">Luca Krämer</div>
                     <div class="team-role">Gesellschafter</div>
                     <div class="team-contact">
@@ -602,7 +606,7 @@
             </div>
             <div class="team-card">
                 <img src="./assets/moritz.png" class="team-avatar" alt="Moritz Stoppel">
-                <div>
+                <div class="team-body">
                     <div class="team-name">Moritz Stoppel</div>
                     <div class="team-role">Gesellschafter</div>
                     <div class="team-contact">
