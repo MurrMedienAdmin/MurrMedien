@@ -47,9 +47,8 @@
             --brand-darkblue: #a6495f;
             --brand-lightblue: #a6495f;
             --brand-rose: #a6495f;
-            --g1: color-mix(in srgb, var(--brand-lightblue) 36%, transparent);
-            --g2: color-mix(in srgb, var(--brand-rose) 26%, transparent);
-            --g3: color-mix(in srgb, var(--brand-darkblue) 22%, transparent);
+            --g1: color-mix(in srgb, var(--brand-rose) 14%, transparent);
+            --g2: color-mix(in srgb, var(--brand-rose) 8%, transparent);
             --apple-blue: #a6495f;
             --glass: rgba(255, 255, 255, 0.18);
             --glass-border: rgba(0, 0, 0, 0.14);
@@ -60,14 +59,18 @@
             --text: rgba(255, 255, 255, 0.92);
             --muted: rgba(255, 255, 255, 0.65);
             --hairline: rgba(255, 255, 255, 0.14);
-            --g1: color-mix(in srgb, var(--brand-lightblue) 44%, transparent);
-            --g2: color-mix(in srgb, var(--brand-rose) 34%, transparent);
-            --g3: color-mix(in srgb, var(--brand-darkblue) 38%, transparent);
+            --g1: color-mix(in srgb, var(--brand-rose) 20%, transparent);
+            --g2: color-mix(in srgb, var(--brand-rose) 12%, transparent);
             --glass: rgba(255, 255, 255, 0.08);
             --glass-border: rgba(255, 255, 255, 0.14);
         }
 
         * { box-sizing: border-box; }
+
+        @property --bx1 { syntax: '<percentage>'; initial-value: 75%; inherits: false; }
+        @property --by1 { syntax: '<percentage>'; initial-value: -5%; inherits: false; }
+        @property --bx2 { syntax: '<percentage>'; initial-value: 5%; inherits: false; }
+        @property --by2 { syntax: '<percentage>'; initial-value: 105%; inherits: false; }
 
         body {
             margin: 0;
@@ -75,10 +78,16 @@
             font-family: "Jost", system-ui, sans-serif;
             color: var(--text);
             background:
-                radial-gradient(900px 520px at 15% 12%, var(--g1), transparent 62%),
-                radial-gradient(820px 640px at 85% 18%, var(--g2), transparent 66%),
-                radial-gradient(720px 640px at 50% 92%, var(--g3), transparent 66%),
+                radial-gradient(ellipse 80% 55% at var(--bx1) var(--by1), var(--g1), transparent),
+                radial-gradient(ellipse 45% 35% at var(--bx2) var(--by2), var(--g2), transparent),
                 var(--bg);
+            animation: bgFloat 22s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { --bx1: 75%; --by1:  -5%; --bx2:  5%; --by2: 105%; }
+            33%       { --bx1: 62%; --by1:   8%; --bx2: 18%; --by2:  92%; }
+            66%       { --bx1: 82%; --by1: -12%; --bx2: -2%; --by2: 112%; }
         }
 
         .page {
@@ -347,12 +356,12 @@
             backdrop-filter: blur(14px);
             overflow: hidden;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .hero-project:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 56px rgba(166, 73, 95, 0.28);
+            box-shadow: 0 20px 56px rgba(0,0,0,0.1);
         }
 
         .hero-project:hover .hero-arrow { transform: translateX(4px); }
@@ -365,7 +374,7 @@
         }
 
         .hero-body {
-            padding: 20px 24px 22px;
+            padding: 24px 26px 26px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
@@ -377,10 +386,21 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--brand-lightblue);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .hero-title { font-size: 17px; font-weight: 400; }
+        .hero-title {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .hero-desc {
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--muted);
+            max-width: 440px;
+        }
 
         .hero-link {
             display: inline-flex;
@@ -602,44 +622,69 @@
             <section>
                 <p class="section-label">Aktuelle Projekte</p>
 
- <!-- HERO PROJECT 3 -->
- <a class="hero-project" href="https://www.sgos.de" target="_blank" rel="noopener">
+                <!-- HERO PROJECT -->
+        <a class="hero-project" href="https://www.sgos.de" target="_blank" rel="noopener">
 
-    <img class="hero-screenshot" src="assets/Mockup_Sponsorenmappe.png" alt="SG Oppenweiler-Strümpfelbach Sponsorenmappe">
+            <img class="hero-screenshot" src="assets/sgos_website_mockup.png" alt="SG Oppenweiler-Strümpfelbach Website">
 
-    <div class="hero-body">
-        <div>
-            <div class="hero-tag">Printdesign · Verein</div>
-            <div class="hero-title">SG Oppenweiler-Strümpfelbach</div>
-            
-        </div>
-        <div class="hero-link">
-            sgos.de <span class="hero-arrow">↗</span>
-        </div>
-    </div>
-</a>
-
-                <a class="hero-project" href="https://www.sgos.de" target="_blank" rel="noopener">
-                    <img class="hero-screenshot" src="assets/sgos_website_mockup.png" alt="SG Oppenweiler-Strümpfelbach Website">
-                    <div class="hero-body">
-                        <div>
-                            <div class="hero-tag">Webentwicklung · Verein</div>
-                            <div class="hero-title">SG Oppenweiler-Strümpfelbach</div>
-                        </div>
-                        <div class="hero-link">sgos.de <span class="hero-arrow">↗</span></div>
+            <div class="hero-body">
+                <div>
+                    
+                    <div class="hero-title">SG Oppenweiler-Strümpfelbach</div>
+                    <div class="hero-desc">
+                        Ein moderner Webauftritt für den lokalen Sportverein – übersichtlich,
+                        mobil optimiert und einfach selbst pflegbar. Von der Struktur
+                        bis zum fertigen Launch aus einer Hand.
                     </div>
-                </a>
+                </div>
+                <div class="hero-link">
+                    sgos.de <span class="hero-arrow">↗</span>
+                </div>
+            </div>
+        </a>
 
-                <a class="hero-project" href="https://www.vereinsgaststaette-rohrbachtal.de" target="_blank" rel="noopener">
-                    <img class="hero-screenshot" src="assets/Vereinsgastst%C3%A4tte%20Rohrbachtal%20mockup.png" alt="Vereinsgaststätte Rohrbachtal Website">
-                    <div class="hero-body">
-                        <div>
-                            <div class="hero-tag">Webentwicklung · Gastronomie</div>
-                            <div class="hero-title">Vereinsgaststätte Rohrbachtal</div>
-                        </div>
-                        <div class="hero-link">vereinsgaststaette-rohrbachtal.de <span class="hero-arrow">↗</span></div>
+        <!-- HERO PROJECT 2 -->
+        <a class="hero-project" href="https://www.vereinsgaststaette-rohrbachtal.de" target="_blank" rel="noopener">
+
+            <img class="hero-screenshot" src="assets/Vereinsgastst%C3%A4tte%20Rohrbachtal%20mockup.png" alt="Vereinsgaststätte Rohrbachtal Website">
+
+            <div class="hero-body">
+                <div>
+                    
+                    <div class="hero-title">Vereinsgaststätte Rohrbachtal</div>
+                    <div class="hero-desc">
+                        Für die Vereinsgaststätte Rohrbachtal haben wir eine moderne Website entwickelt. 
+                        Besonderes Augenmerk lag auf der in das CMS integrierten Speisekarte, die es ermöglicht, Änderungen schnell und unkompliziert – auch mobil über das Smartphone – vorzunehmen.
                     </div>
-                </a>
+                </div>
+                <div class="hero-link">
+                    vereinsgaststaette-rohrbachtal.de <span class="hero-arrow">↗</span>
+                </div>
+            </div>
+        </a>
+
+         <!-- HERO PROJECT 3 -->
+         <a class="hero-project" href="https://www.sgos.de" target="_blank" rel="noopener">
+
+            <img class="hero-screenshot" src="assets/Mockup_Sponsorenmappe.png" alt="SG Oppenweiler-Strümpfelbach Sponsorenmappe">
+
+            <div class="hero-body">
+                <div>
+                    
+                    <div class="hero-title">SG Oppenweiler-Strümpfelbach</div>
+                    <div class="hero-desc">
+                        Entwicklung eines Corporate Designs sowie darauf aufbauend die Konzeption und Umsetzung einer Sponsorenmappe für die SG Oppenweiler-Strümpfelbach.
+                    </div>
+                </div>
+                <div class="hero-link">
+                    sgos.de <span class="hero-arrow">↗</span>
+                </div>
+            </div>
+        </a>
+        <!--
+            Weitere Projekte hier einfach als <a class="hero-project" ...> oder <a class="project-card" ...> ergänzen.
+        -->
+
 
                 <a class="link-more" href="./projekte.html">Alle Projekte ansehen →</a>
             </section>
