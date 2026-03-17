@@ -13,12 +13,18 @@
     "img": "/images/vrm.png",
     "link": "https://www.vereinsgaststaette-rohrbachtal.de/"
   },
-
   {
     "uuid": 3,
     "fullTitle": "SG Oppenweiler Strümpfelbach",
     "desc": "Entwicklung eines Corporate Designs sowie darauf aufbauend die Konzeption und Umsetzung einer Sponsorenmappe für die SG Oppenweiler-Strümpfelbach.",
     "img": "/images/Mockup_Sponsorenmappe.png",
     "link": "https://www.sgos.de/"
+  },
+   {
+    "uuid": 4,
+    "fullTitle": "SG Oppenweiler Strümpfelbach Tennisabteilung",
+    "desc": "Ein moderner Webauftritt für den lokalen Sportverein – übersichtlich, mobil optimiert und einfach selbst pflegbar. Von der Struktur bis zum fertigen Launch aus einer Hand.",
+    "img": "/images/sgos-tennis.png",
+    "link": "https://www.oppenweiler-tennis.de/"
   }
 ]
