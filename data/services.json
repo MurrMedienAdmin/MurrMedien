@@ -1,0 +1,32 @@
+ [
+      {
+        "id": 1,
+        "title": "Webentwicklung",
+        "description": "Individuelle Websites, die ihr selbst vom Smartphone aus pflegen könnt."
+      },
+      {
+        "id": 2,
+        "title": "Corporate Identity",
+        "description": "Logo, Farben, Typografie – ein Auftritt mit Charakter."
+      },
+      {
+        "id": 3,
+        "title": "Printmedien",
+        "description": "Visitenkarten, Flyer, Broschüren – mit Sorgfalt gestaltet."
+      },
+      {
+        "id": 4,
+        "title": "Werbemittel",
+        "description": "Alles, was euren Auftritt im Alltag sichtbar macht."
+      },
+      {
+        "id": 5,
+        "title": "Content & Medienproduktion",
+        "description": "Fotos, Videos und Social-Media-Content, die eure Geschichte authentisch erzählen und eure Marke erlebbar machen."
+      },
+      {
+        "id": 6,
+        "title": "Betreuung & Beratung",
+        "description": "Wir begleiten euch ganzheitlich – von der strategischen Konzeption über die Umsetzung bis zur langfristigen Betreuung und Weiterentwicklung."
+      }
+    ]
