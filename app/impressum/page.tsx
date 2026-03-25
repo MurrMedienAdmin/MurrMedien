@@ -19,18 +19,18 @@ export default function ImpressumPage() {
       <div className="space-y-10 text-sm leading-relaxed text-muted-foreground">
         <section className="space-y-3">
           <h2 className="text-xs uppercase tracking-wider text-foreground">
-            Angaben gemäß § 5 TMG
+            Angaben gemäß § 5 DDG
           </h2>
           <p>
-            Murr Medien GbR
-            <br />
+            <span className="text-foreground">Moritz Stoppel & Luca Krämer GbR </span><br />
+            handelnd unter der Marke Murr Medien<br />
             Amselweg 5<br />
             71570 Oppenweiler
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xs uppercase tracking-wider text-foreground">Gesellschafter</h2>
+          <h2 className="text-xs uppercase tracking-wider text-foreground">Vertreten durch die Gesellschafter</h2>
           <p>
             Luca Krämer
             <br />
@@ -53,20 +53,11 @@ export default function ImpressumPage() {
           </p>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xs uppercase tracking-wider text-foreground">Umsatzsteuer-ID</h2>
-          <p>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
-            <br />
-            51061/47053
-          </p>
-        </section>
-
         <Separator />
 
         <section className="space-y-3">
           <h2 className="text-xs uppercase tracking-wider text-foreground">
-            Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+            Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
           </h2>
           <p>
             Luca Krämer &amp; Moritz Stoppel
