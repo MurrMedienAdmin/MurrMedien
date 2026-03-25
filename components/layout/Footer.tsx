@@ -18,7 +18,7 @@ export default function Footer() {
             />
 
             <div className="text-sm text-muted-foreground leading-relaxed">
-              <p>Murr Medien GbR</p>
+              <p>Moritz Stoppel & Luca Krämer GbR</p>
               <p>Amselweg 5 · 71570 Oppenweiler</p>
             </div>
 
