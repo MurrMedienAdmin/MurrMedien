@@ -9,7 +9,8 @@ export default async function NotFound() {
           Seite nicht gefunden
         </h1>
         <p className="text-base leading-relaxed text-muted-foreground max-w-sm">
-          Diese Seite existiert nicht oder wurde verschoben. Aber keine Sorge, wir haben viele andere tolle Inhalte für dich!
+          Diese Seite existiert nicht oder wurde verschoben. Aber keine Sorge, wir haben viele
+          andere tolle Inhalte für dich!
         </p>
         <Button asChild size="lg">
           <Link href="/">Zur Startseite</Link>

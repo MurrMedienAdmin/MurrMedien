@@ -1,3 +1,4 @@
+import { getStrapiImageUrl } from "@/lib/strapi"
 import { PersonProps } from "../types/types"
 
 export const mapWpPerson = async (wpData: any): Promise<PersonProps> => ({
@@ -29,4 +30,15 @@ export const mapJsonPerson = (json: any): PersonProps => ({
   phoneNumber: json.phoneNumber,
   role: json.role,
   linkedIn: json.linkedIn,
+})
+
+export const mapStrapiPerson = (strapiData: any): PersonProps => ({
+  id: strapiData.id,
+  firstName: strapiData.firstName,
+  lastName: strapiData.lastName,
+  img: getStrapiImageUrl(strapiData.picture),
+  email: strapiData.email,
+  phoneNumber: strapiData.phonenumber,
+  role: strapiData.role,
+  linkedIn: strapiData.linkedInUrl,
 })

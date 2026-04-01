@@ -1,3 +1,4 @@
+import { getStrapiImageUrl } from "@/lib/strapi"
 import { ProjectProps } from "../types/types"
 
 // Mapping von WordPress
@@ -24,4 +25,12 @@ export const mapJsonProject = (json: any): ProjectProps => ({
   description: json.desc,
   imageUrl: json.img,
   link: json.link,
+})
+
+export const mapStarpiProject = (strapiData: any): ProjectProps => ({
+  id: strapiData.id,
+  title: strapiData.Title,
+  description: strapiData.Description,
+  imageUrl: getStrapiImageUrl(strapiData.Foto),
+  link: strapiData.WebsiteUrl,
 })

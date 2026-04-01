@@ -22,15 +22,19 @@ export default function ImpressumPage() {
             Angaben gemäß § 5 DDG
           </h2>
           <p>
-            <span className="text-foreground">Moritz Stoppel & Luca Krämer GbR </span><br />
-            handelnd unter der Marke Murr Medien<br />
+            <span className="text-foreground">Moritz Stoppel & Luca Krämer GbR </span>
+            <br />
+            handelnd unter der Marke Murr Medien
+            <br />
             Amselweg 5<br />
             71570 Oppenweiler
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xs uppercase tracking-wider text-foreground">Vertreten durch die Gesellschafter</h2>
+          <h2 className="text-xs uppercase tracking-wider text-foreground">
+            Vertreten durch die Gesellschafter
+          </h2>
           <p>
             Luca Krämer
             <br />

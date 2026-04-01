@@ -11,3 +11,9 @@ export const mapWpService = async (wpData: any): Promise<ServiceProps> => ({
   title: wpData.title.rendered,
   description: wpData.acf.description,
 })
+
+export const mapStrapiService = async (strapiData: any): Promise<ServiceProps> => ({
+  id: strapiData.id,
+  title: strapiData.title,
+  description: strapiData.description,
+})
