@@ -24,7 +24,7 @@ export default async function Home() {
             Lächeln hinterlassen.
           </h1>
           <p className="text-base leading-relaxed text-muted-foreground max-w-sm">
-            Von der Website bis zur Corporate Identity: Wir entwickeln Medien, die euren Auftritt stärken und nachhaltig wirken.
+            Von der Website bis zur Corporate Identity: Wir entwickeln Medien, die eure Marke sichtbar stärken.
           </p>
           <Button asChild size="lg">
             <Link href="/kontakt">Termin vereinbaren</Link>
