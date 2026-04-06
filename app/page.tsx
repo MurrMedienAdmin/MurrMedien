@@ -5,7 +5,6 @@ import ServiceList from "@/components/services/ServiceList"
 import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import Section from "@/components/layout/Section"
-import Image from "next/image"
 import Link from "next/link"
 
 export default async function Home() {
@@ -16,17 +15,7 @@ export default async function Home() {
   return (
     <main className="max-w-5xl mx-auto px-6 py-16 space-y-16">
       {/* Hero */}
-      <section className="grid md:grid-cols-[2fr_3fr] gap-12 md:gap-20 items-center min-h-[60vh]">
-        <div className="overflow-hidden rounded-xl aspect-2/3">
-          <Image
-            src="/images/moritz_lachen.jpeg"
-            alt="Murr Medien Team"
-            width={600}
-            height={900}
-            className="w-full h-full object-cover object-top"
-            priority
-          />
-        </div>
+      <section className="min-h-[40vh] flex items-center">
         <div className="space-y-6">
           <p className="text-xs uppercase tracking-widest text-muted-foreground">Murr Medien</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
@@ -35,8 +24,7 @@ export default async function Home() {
             Lächeln hinterlassen.
           </h1>
           <p className="text-base leading-relaxed text-muted-foreground max-w-sm">
-            Wir machen Medien, die zu euch passen. Mit Herzblut, ohne Schnickschnack und auf
-            Augenhöhe.
+            Von der Website bis zur Corporate Identity: Wir entwickeln Medien, die euren Auftritt stärken und nachhaltig wirken.
           </p>
           <Button asChild size="lg">
             <Link href="/kontakt">Termin vereinbaren</Link>
