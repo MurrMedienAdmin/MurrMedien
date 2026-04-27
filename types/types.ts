@@ -1,8 +1,14 @@
+export interface MediaItem {
+  type: "image" | "video"
+  url: string
+}
+
 export interface ProjectProps {
   id: number
   title: string
   imageUrl: string
   videoUrl?: string
+  media?: MediaItem[]
   description: string
   link: string
 }

@@ -32,7 +32,10 @@
     "fullTitle": "Therapiekonzept Weissach",
     "desc": "Ein klarer, professioneller Webauftritt für eine physiotherapeutische Praxis – übersichtlich strukturiert und optimal auf die Bedürfnisse der Patienten ausgerichtet.",
     "img": "/images/therapiekonzept.jpg",
-    "video": "/images/therapiekonzept.mp4",
+    "media": [
+      { "type": "video", "url": "/images/therapiekonzept.mp4" },
+      { "type": "image", "url": "/images/therapiekonzept.jpg" }
+    ],
     "link": "https://therapiekonzept-weissach.de"
   }
 ]

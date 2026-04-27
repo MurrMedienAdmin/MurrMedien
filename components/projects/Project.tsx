@@ -2,6 +2,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button"
 import { ProjectProps } from "@/types/types"
 import Link from "next/link"
+import MediaSlider from "./MediaSlider"
 
 type ProjectComponentProps = {
   project: ProjectProps
@@ -11,14 +12,16 @@ const Project = ({ project }: ProjectComponentProps) => {
   return (
     <Card className="group mx-auto w-full max-w-sm pt-0 overflow-hidden h-full flex flex-col">
       <div className="overflow-hidden aspect-video">
-        {project.videoUrl ? (
+        {project.media && project.media.length > 1 ? (
+          <MediaSlider items={project.media} alt={project.title} />
+        ) : project.videoUrl ? (
           <video
             src={project.videoUrl}
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         ) : (
           <img
