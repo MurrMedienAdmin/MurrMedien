@@ -10,18 +10,21 @@ export interface ProjectProps {
   videoUrl?: string
   media?: MediaItem[]
   description: string
+  category?: string
   link: string
+  gridSpan?: number
+  aspect?: string
 }
 
 export interface PersonProps {
   id: number
   firstName: string
   lastName: string
-  email: string
-  phoneNumber: string
+  email?: string
+  phoneNumber?: string
   role: string
   img: string
-  linkedIn: string
+  linkedIn?: string
 }
 
 export interface ServiceProps {

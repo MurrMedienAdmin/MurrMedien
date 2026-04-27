@@ -1,22 +1,29 @@
 [
-    {
-      "uuid": 1,
-      "firstName": "Luca",
-      "lastName": "Krämer",
-      "email": "luca.kraemer@murrmedien.de",
-      "phoneNumber": "+49 155 66152739",
-      "role": "Gesellschafter",
-      "img": "/images/luca.png",
-      "linkedIn": "https://www.linkedin.com/in/luca-krämer-5676b11ba/"
-    },
-    {
-      "uuid": 2,
-      "firstName": "Moritz",
-      "lastName": "Stoppel",
-      "email": "moritz.stoppel@murrmedien.de",
-      "phoneNumber": "+49 179 739 849 7",
-      "role": "Gesellschafter",
-      "img": "/images/moritz.png",
-      "linkedIn": "https://www.linkedin.com/in/moritz-stoppel-b36081358/"
-    }
-  ]
+  {
+    "uuid": 1,
+    "firstName": "Luca",
+    "lastName": "Krämer",
+    "email": "luca.kraemer@murrmedien.de",
+    "phoneNumber": "+49 155 66152739",
+    "role": "Gesellschafter, Entwickler",
+    "img": "/images/luca_kraemer.jpg",
+    "linkedIn": "https://www.linkedin.com/in/luca-krämer-5676b11ba/"
+  },
+  {
+    "uuid": 2,
+    "firstName": "Moritz",
+    "lastName": "Stoppel",
+    "email": "moritz.stoppel@murrmedien.de",
+    "phoneNumber": "+49 179 739 849 7",
+    "role": "Gesellschafter, Design",
+    "img": "/images/moritz_stoppel.jpg",
+    "linkedIn": "https://www.linkedin.com/in/moritz-stoppel-b36081358/"
+  },
+  {
+    "uuid": 3,
+    "firstName": "Ivo",
+    "lastName": "Huber",
+    "role": "Fotografie, Videografie & Content Creation",
+    "img": "/images/ivo_huber.png"
+  }
+]

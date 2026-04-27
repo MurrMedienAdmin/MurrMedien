@@ -1,7 +1,6 @@
 "use client"
 
 import { ProjectProps } from "@/types/types"
-import React from "react"
 import Project from "./Project"
 
 type ProjectListProps = {
@@ -10,11 +9,15 @@ type ProjectListProps = {
 
 const ProjectList = ({ projects }: ProjectListProps) => {
   return (
-    <>
+    <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-1 p-1">
       {projects.map((project) => (
-        <Project key={project.id} project={project} />
+        <Project
+          key={project.id}
+          project={project}
+          colSpan={project.gridSpan ?? 3}
+        />
       ))}
-    </>
+    </div>
   )
 }
 

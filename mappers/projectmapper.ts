@@ -23,10 +23,13 @@ export const mapJsonProject = (json: any): ProjectProps => ({
   id: json.uuid,
   title: json.fullTitle,
   description: json.desc,
+  category: json.category,
   imageUrl: json.img,
   videoUrl: json.video,
   media: json.media,
   link: json.link,
+  gridSpan: json.gridSpan,
+  aspect: json.aspect,
 })
 
 export const mapStarpiProject = (strapiData: any): ProjectProps => ({

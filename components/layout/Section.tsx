@@ -2,26 +2,33 @@ import React from "react"
 import { cn } from "@/lib/utils"
 
 type SectionProps = {
-  label?: string
-  action?: React.ReactNode
-  title?: string
+  heading?: string
   description?: string
   children?: React.ReactNode
   className?: string
 }
 
-const Section = ({ children, className, label, action, title, description }: SectionProps) => {
-  return (
-    <section className={cn("space-y-8", className)}>
-      {(label || action) && (
-        <div className="flex items-center justify-between">
-          {label && (
-            <p className="text-xs uppercase tracking-widest text-muted-foreground">{label}</p>
+const Section = ({ children, className, heading, description }: SectionProps) => {
+  if (heading) {
+    return (
+      <section className={cn("space-y-10", className)}>
+        <div className="md:w-1/2 space-y-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-tight tracking-tight">
+            {heading}
+          </h2>
+          {description && (
+            <p className="text-base leading-relaxed text-muted-foreground">{description}</p>
           )}
-          {action}
         </div>
-      )}
-      {title && <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>}
+        <div className="md:w-1/2 md:ml-auto">
+          {children}
+        </div>
+      </section>
+    )
+  }
+
+  return (
+    <section className={cn("space-y-6", className)}>
       {description && (
         <p className="text-base leading-relaxed text-muted-foreground">{description}</p>
       )}

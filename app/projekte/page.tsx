@@ -1,38 +1,27 @@
-import Section from "@/components/layout/Section"
 import ProjectList from "@/components/projects/ProjectList"
 import { getProjects } from "@/lib/dataprovider"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import Link from "next/link"
+import PageHeading from "@/components/layout/PageHeading"
 
 export const metadata = {
-  title: "Projekte – Murr Medien",
+  title: "Projekte",
+  description:
+    "Referenzen von Murr Medien: Websites, Corporate Designs, Fotos und Videos für Unternehmen und Vereine im Rems-Murr-Kreis und Umgebung.",
+  alternates: { canonical: "https://murrmedien.de/projekte" },
+  openGraph: {
+    url: "https://murrmedien.de/projekte",
+    title: "Projekte | Murr Medien",
+    description:
+      "Referenzen von Murr Medien: Websites, Corporate Designs, Fotos und Videos für Unternehmen und Vereine im Rems-Murr-Kreis.",
+  },
 }
 
 export default async function Projekte() {
   const projects = await getProjects()
 
   return (
-    <main className="max-w-5xl mx-auto px-6 py-16 space-y-16">
-      <Section
-        label="Projekte"
-        description="Ein Blick in unsere Projekte verrät dir mehr über unsere Arbeit und unseren Stil. Entdecke, was wir bisher umgesetzt haben."
-      >
-        <div className="grid gap-6">
-          <ProjectList projects={projects} />
-        </div>
-      </Section>
-
-      <Separator />
-
-      <Section title="Euer Projekt ist das nächste?" className="max-w-xl space-y-4">
-        <p className="text-base leading-relaxed text-muted-foreground">
-          Schreibt uns oder ruft direkt an – wir hören zu und schauen gemeinsam, was möglich ist.
-        </p>
-        <Button asChild>
-          <Link href="/kontakt">Projekt anfragen</Link>
-        </Button>
-      </Section>
+    <main>
+      <PageHeading>Projekte</PageHeading>
+      <ProjectList projects={projects} />
     </main>
   )
 }

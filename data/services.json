@@ -1,32 +1,42 @@
- [
-      {
-        "id": 1,
-        "title": "Webentwicklung",
-        "description": "Individuelle Websites, die ihr selbst vom Smartphone aus pflegen könnt."
-      },
-      {
-        "id": 2,
-        "title": "Corporate Identity",
-        "description": "Logo, Farben, Typografie – ein Auftritt mit Charakter."
-      },
-      {
-        "id": 3,
-        "title": "Printmedien",
-        "description": "Visitenkarten, Flyer, Broschüren – mit Sorgfalt gestaltet."
-      },
-      {
-        "id": 4,
-        "title": "Werbemittel",
-        "description": "Alles, was euren Auftritt im Alltag sichtbar macht."
-      },
-      {
-        "id": 5,
-        "title": "Content & Medienproduktion",
-        "description": "Fotos, Videos und Social-Media-Content, die eure Geschichte authentisch erzählen und eure Marke erlebbar machen."
-      },
-      {
-        "id": 6,
-        "title": "Betreuung & Beratung",
-        "description": "Wir begleiten euch ganzheitlich – von der strategischen Konzeption über die Umsetzung bis zur langfristigen Betreuung und Weiterentwicklung."
-      }
-    ]
+[
+  {
+    "id": 1,
+    "title": "Webentwicklung",
+    "description": "Wir entwickeln individuelle Websites und Webanwendungen, die nicht nur gut aussehen, sondern auch wirklich funktionieren. Von der einfachen Unternehmensseite bis zum komplexen Onlineauftritt bauen wir Lösungen, die ihr selbst pflegen könnt und die mit euch wachsen."
+  },
+  {
+    "id": 2,
+    "title": "Corporate Identity",
+    "description": "Eure Marke ist mehr als ein Logo. Wir entwickeln eine visuelle Identität, die zu euch passt: Logodesign, Farbwelt, Typografie und alle gestalterischen Grundlagen, die euren Auftritt konsistent und unverwechselbar machen."
+  },
+  {
+    "id": 3,
+    "title": "Fotografie",
+    "description": "Ob Produkt, Architektur, Portrait oder Reportage: Ivo Huber fotografiert mit einem Blick für Licht, Komposition und das Wesentliche. Hochwertige Bilder, die eure Marke zeigen, wie sie wirklich ist."
+  },
+  {
+    "id": 4,
+    "title": "Videografie",
+    "description": "Vom kurzen Clip für die sozialen Medien bis zum professionellen Unternehmensfilm produzieren wir Videoinhalte, die bewegen. Wir übernehmen Konzeption, Dreh und Schnitt und liefern euch fertige Inhalte, die auf den Punkt kommen."
+  },
+  {
+    "id": 5,
+    "title": "Content Creation",
+    "description": "Wir produzieren Inhalte, die eurer Zielgruppe im Gedächtnis bleiben. Von der Contentstrategie über die Erstellung bis zur regelmäßigen Bespielung eurer Kanäle begleiten wir euch dabei, online sichtbar zu bleiben und echte Reichweite aufzubauen."
+  },
+  {
+    "id": 6,
+    "title": "Printmedien",
+    "description": "Visitenkarten, Flyer, Broschüren, Plakate: gutes Print ist kein Auslaufmodell, sondern ein Statement. Wir gestalten Drucksachen, die in der Hand gut aussehen, klar kommunizieren und zu eurem Gesamtauftritt passen."
+  },
+  {
+    "id": 7,
+    "title": "Werbemittel",
+    "description": "Messeauftritte, Fahrzeugbeschriftungen, Giveaways, Beschilderungen: wir konzipieren und gestalten alles, was eure Marke im Alltag sichtbar und greifbar macht. Jedes Werbemittel zahlt auf euren Gesamtauftritt ein."
+  },
+  {
+    "id": 8,
+    "title": "Betreuung & Beratung",
+    "description": "Wir begleiten euch nicht nur bis zur Abgabe. Ob laufende Website Pflege, strategische Weiterentwicklung oder die Frage, welcher nächste Schritt Sinn ergibt: wir sind ansprechbar und denken mit. Langfristige Zusammenarbeit ist uns lieber als einmalige Projekte."
+  }
+]

@@ -1,52 +1,70 @@
-import { getPeople } from "@/lib/dataprovider"
-import PeopleList from "@/components/people/PeopleList"
-import { Separator } from "@/components/ui/separator"
-import Section from "@/components/layout/Section"
+import PageHeading from "@/components/layout/PageHeading"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Kontakt – Murr Medien",
+  title: "Kontakt",
+  description:
+    "Schreib uns – Murr Medien aus dem Rems-Murr-Kreis freut sich über neue Projekte. Erreich uns per E-Mail, Instagram oder LinkedIn.",
+  alternates: { canonical: "https://murrmedien.de/kontakt" },
+  openGraph: {
+    url: "https://murrmedien.de/kontakt",
+    title: "Kontakt | Murr Medien",
+    description:
+      "Schreib uns – Murr Medien aus dem Rems-Murr-Kreis freut sich über neue Projekte.",
+  },
 }
 
-export default async function KontaktPage() {
-  const people = await getPeople()
+const tiles = [
+  {
+    label: "Email",
+    value: "info@murrmedien.de",
+    href: "mailto:info@murrmedien.de",
+    hoverBg: "hover:bg-amber-400",
+    span: "col-span-2",
+  },
+  {
+    label: "Instagram",
+    value: "@murrmedien",
+    href: "https://www.instagram.com/murrmedien",
+    hoverBg: "hover:bg-pink-500",
+    span: "col-span-1",
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    value: "Murr Medien",
+    href: "https://www.linkedin.com/company/murrmedien",
+    hoverBg: "hover:bg-blue-600",
+    span: "col-span-1",
+    external: true,
+  },
+]
 
+export default function KontaktPage() {
   return (
-    <main className="max-w-5xl mx-auto px-6 py-16 space-y-16">
-      {/* Intro */}
-      <Section label="Kontakt" className="max-w-2xl space-y-4">
-        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
-          Schreib uns direkt oder ruf an.
-        </h1>
-        <p className="text-base leading-relaxed text-muted-foreground">
-          Wir antworten persönlich und zeitnah.
-        </p>
-      </Section>
+    <main>
+      <PageHeading>Kontakt</PageHeading>
 
-      {/* Team */}
-      <section className="space-y-8">
-        <div className="grid gap-8 sm:grid-cols-2 max-w-lg">
-          <PeopleList people={people} />
+      <div className="px-6 md:px-12 lg:px-20 pb-16">
+        <div className="grid grid-cols-2 gap-3">
+          {tiles.map((tile) => (
+            <Link
+              key={tile.label}
+              href={tile.href}
+              target={tile.external ? "_blank" : undefined}
+              rel={tile.external ? "noopener noreferrer" : undefined}
+              className={`group ${tile.span} rounded-2xl bg-zinc-900 ${tile.hoverBg} transition-colors duration-300 p-8 md:p-10 min-h-48 md:min-h-64 flex flex-col justify-between`}
+            >
+              <span className="text-2xl md:text-4xl font-black uppercase text-white leading-tight">
+                {tile.label}
+              </span>
+              <span className="text-sm text-white/50 group-hover:text-white/80 transition-colors self-end">
+                {tile.value}
+              </span>
+            </Link>
+          ))}
         </div>
-      </section>
-
-      <Separator />
-
-      {/* Anschrift */}
-      <Section label="Anschrift" className="space-y-4">
-        <div className="space-y-1 text-sm text-muted-foreground">
-          <p className="text-foreground font-medium">Murr Medien GbR</p>
-          <p>Amselweg 5, 71570 Oppenweiler</p>
-        </div>
-        <Link
-          href="https://maps.apple.com/?address=Amselweg+5,+71570+Oppenweiler"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition"
-        >
-          In Maps öffnen ↗
-        </Link>
-      </Section>
+      </div>
     </main>
   )
 }

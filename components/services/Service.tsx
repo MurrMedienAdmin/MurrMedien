@@ -1,4 +1,3 @@
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ServiceProps } from "@/types/types"
 
 type ServiceProps2 = {
@@ -7,12 +6,10 @@ type ServiceProps2 = {
 
 const Service = ({ service }: ServiceProps2) => {
   return (
-    <Card className="mx-auto w-full max-w-sm">
-      <CardHeader>
-        <CardTitle>{service.title}</CardTitle>
-        <CardDescription>{service.description}</CardDescription>
-      </CardHeader>
-    </Card>
+    <div className="border-t border-border pt-4 space-y-2">
+      <h3 className="font-serif font-semibold tracking-tight">{service.title}</h3>
+      <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+    </div>
   )
 }
 

@@ -1,41 +1,77 @@
 [
   {
-    "uuid": 1,
-    "fullTitle": "SG Oppenweiler Strümpfelbach",
-    "desc": "Ein moderner Webauftritt für den lokalen Sportverein – übersichtlich, mobil optimiert und einfach selbst pflegbar. Von der Struktur bis zum fertigen Launch aus einer Hand.",
-    "img": "/images/sgos.png",
-    "link": "https://www.sgos.de/"
+    "uuid": 5,
+    "fullTitle": "Therapie Konzept",
+    "desc": "Ein klarer, professioneller Webauftritt für eine physiotherapeutische Praxis, übersichtlich strukturiert und optimal auf die Bedürfnisse der Patienten ausgerichtet.",
+    "category": "Webentwicklung",
+    "img": "/images/therapiekonzept.jpg",
+    "link": "https://therapiekonzept-weissach.de",
+    "gridSpan": 3
   },
   {
-    "uuid": 2,
-    "fullTitle": "Vereinsgaststätte Rohrbachtal",
-    "desc": "Besonderes Augenmerk lag auf der in das CMS integrierten Speisekarte, die es ermöglicht, Änderungen schnell und unkompliziert – auch mobil über das Smartphone vorzunehmen.",
-    "img": "/images/vrm.png",
-    "link": "https://www.vereinsgaststaette-rohrbachtal.de/"
+    "uuid": 6,
+    "fullTitle": "Therapie Konzept",
+    "desc": "Content Creation und Fotografie für die Praxis Therapiekonzept Weissach.",
+    "category": "Fotografie",
+    "img": "/images/therapie_konzept_content_creation.jpg",
+    "link": "https://therapiekonzept-weissach.de",
+    "gridSpan": 3
+  },
+  {
+    "uuid": 7,
+    "fullTitle": "Therapie Konzept",
+    "desc": "Videoproduktion für die Praxis Therapiekonzept Weissach.",
+    "category": "Webentwicklung",
+    "img": "/images/therapie_konzept_video.mp4",
+    "link": "https://therapiekonzept-weissach.de",
+    "gridSpan": 6
+  },
+  {
+    "uuid": 1,
+    "fullTitle": "SG Oppenweiler Strümpfelbach",
+    "desc": "Ein moderner Webauftritt für den lokalen Sportverein, übersichtlich, mobil optimiert und einfach selbst pflegbar. Von der Struktur bis zum fertigen Launch aus einer Hand.",
+    "category": "Webdesign",
+    "img": "/images/sgos.png",
+    "link": "https://www.sgos.de/",
+    "gridSpan": 2,
+    "aspect": "aspect-square"
   },
   {
     "uuid": 3,
     "fullTitle": "SG Oppenweiler Strümpfelbach",
-    "desc": "Entwicklung eines Corporate Designs sowie darauf aufbauend die Konzeption und Umsetzung einer Sponsorenmappe für die SG Oppenweiler-Strümpfelbach.",
+    "desc": "Entwicklung eines Corporate Designs sowie darauf aufbauend die Konzeption und Umsetzung einer Sponsorenmappe.",
+    "category": "Corporate Design",
     "img": "/images/Mockup_Sponsorenmappe.png",
-    "link": "https://www.sgos.de/"
+    "link": "https://www.sgos.de/",
+    "gridSpan": 2,
+    "aspect": "aspect-square"
+  },
+  {
+    "uuid": 8,
+    "fullTitle": "SG Oppenweiler Strümpfelbach",
+    "desc": "Content Creation und Fotografie für die SG Oppenweiler Strümpfelbach.",
+    "category": "Fotografie",
+    "img": "/images/content_creation_jubel_sgos.png",
+    "link": "https://www.sgos.de/",
+    "gridSpan": 2,
+    "aspect": "aspect-square"
+  },
+  {
+    "uuid": 2,
+    "fullTitle": "Vereinsgaststätte Rohrbachtal",
+    "desc": "Besonderes Augenmerk lag auf der in das CMS integrierten Speisekarte, die es ermöglicht, Änderungen schnell und unkompliziert auch mobil über das Smartphone vorzunehmen.",
+    "category": "Webdesign",
+    "img": "/images/vrm.png",
+    "link": "https://www.vereinsgaststaette-rohrbachtal.de/",
+    "gridSpan": 3
   },
   {
     "uuid": 4,
-    "fullTitle": "SG Oppenweiler Strümpfelbach Tennisabteilung",
-    "desc": "Ein moderner Webauftritt für den lokalen Sportverein – übersichtlich, mobil optimiert und einfach selbst pflegbar. Von der Struktur bis zum fertigen Launch aus einer Hand.",
+    "fullTitle": "SG Oppenweiler Tennisabteilung",
+    "desc": "Ein moderner Webauftritt für die Tennisabteilung des lokalen Sportvereins.",
+    "category": "Webdesign",
     "img": "/images/sgos-tennis.png",
-    "link": "https://www.oppenweiler-tennis.de/"
-  },
-  {
-    "uuid": 5,
-    "fullTitle": "Therapiekonzept Weissach",
-    "desc": "Ein klarer, professioneller Webauftritt für eine physiotherapeutische Praxis – übersichtlich strukturiert und optimal auf die Bedürfnisse der Patienten ausgerichtet.",
-    "img": "/images/therapiekonzept.jpg",
-    "media": [
-      { "type": "video", "url": "/images/therapiekonzept.mp4" },
-      { "type": "image", "url": "/images/therapiekonzept.jpg" }
-    ],
-    "link": "https://therapiekonzept-weissach.de"
+    "link": "https://www.oppenweiler-tennis.de/",
+    "gridSpan": 3
   }
 ]
