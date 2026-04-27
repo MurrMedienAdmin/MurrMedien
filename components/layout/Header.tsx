@@ -48,8 +48,8 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-12 w-12" aria-label="Menü öffnen">
-                <Menu className="h-7 w-7" />
+              <Button variant="ghost" size="icon" className="h-14 w-14" aria-label="Menü öffnen">
+                <Menu className="h-[1.85rem] w-[1.85rem]" />
               </Button>
             </SheetTrigger>
 
