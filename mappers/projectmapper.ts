@@ -24,6 +24,7 @@ export const mapJsonProject = (json: any): ProjectProps => ({
   title: json.fullTitle,
   description: json.desc,
   imageUrl: json.img,
+  videoUrl: json.video,
   link: json.link,
 })
 

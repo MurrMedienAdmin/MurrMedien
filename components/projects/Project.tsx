@@ -11,11 +11,22 @@ const Project = ({ project }: ProjectComponentProps) => {
   return (
     <Card className="group mx-auto w-full max-w-sm pt-0 overflow-hidden h-full flex flex-col">
       <div className="overflow-hidden aspect-video">
-        <img
-          src={project.imageUrl}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        {project.videoUrl ? (
+          <video
+            src={project.videoUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <img
+            src={project.imageUrl}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
       </div>
 
       <CardHeader>

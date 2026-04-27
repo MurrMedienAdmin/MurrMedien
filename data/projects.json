@@ -20,11 +20,19 @@
     "img": "/images/Mockup_Sponsorenmappe.png",
     "link": "https://www.sgos.de/"
   },
-   {
+  {
     "uuid": 4,
     "fullTitle": "SG Oppenweiler Strümpfelbach Tennisabteilung",
     "desc": "Ein moderner Webauftritt für den lokalen Sportverein – übersichtlich, mobil optimiert und einfach selbst pflegbar. Von der Struktur bis zum fertigen Launch aus einer Hand.",
     "img": "/images/sgos-tennis.png",
     "link": "https://www.oppenweiler-tennis.de/"
+  },
+  {
+    "uuid": 5,
+    "fullTitle": "Therapiekonzept Weissach",
+    "desc": "Ein klarer, professioneller Webauftritt für eine physiotherapeutische Praxis – übersichtlich strukturiert und optimal auf die Bedürfnisse der Patienten ausgerichtet.",
+    "img": "/images/therapiekonzept.jpg",
+    "video": "/images/therapiekonzept.mp4",
+    "link": "https://therapiekonzept-weissach.de"
   }
 ]
