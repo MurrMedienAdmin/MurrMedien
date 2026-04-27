@@ -18,7 +18,7 @@ export default async function Projekte() {
         label="Projekte"
         description="Ein Blick in unsere Projekte verrät dir mehr über unsere Arbeit und unseren Stil. Entdecke, was wir bisher umgesetzt haben."
       >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6">
           <ProjectList projects={projects} />
         </div>
       </Section>

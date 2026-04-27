@@ -10,8 +10,8 @@ type ProjectComponentProps = {
 
 const Project = ({ project }: ProjectComponentProps) => {
   return (
-    <Card className="group mx-auto w-full max-w-sm pt-0 overflow-hidden h-full flex flex-col">
-      <div className="overflow-hidden aspect-video">
+    <Card className="group mx-auto w-full pt-0 overflow-hidden h-full flex flex-col">
+      <div className="overflow-hidden aspect-[4/3]">
         {project.media && project.media.length > 1 ? (
           <MediaSlider items={project.media} alt={project.title} />
         ) : project.videoUrl ? (
