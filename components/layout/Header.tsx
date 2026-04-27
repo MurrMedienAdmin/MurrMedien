@@ -49,7 +49,7 @@ export default function Header() {
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="h-14 w-14" aria-label="Menü öffnen">
-                <Menu className="h-[1.85rem] w-[1.85rem]" />
+                <Menu className="h-10 w-10" />
               </Button>
             </SheetTrigger>
 

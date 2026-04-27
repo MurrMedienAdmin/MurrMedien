@@ -10,7 +10,7 @@ const colSpanClass: Record<number, string> = {
   1: "col-span-1 md:col-span-1",
   2: "col-span-1 md:col-span-2",
   3: "col-span-1 md:col-span-3",
-  6: "col-span-2 md:col-span-6",
+  6: "col-span-1 md:col-span-6",
 }
 
 const Project = ({ project, colSpan = 3 }: ProjectComponentProps) => {
@@ -63,11 +63,11 @@ const Project = ({ project, colSpan = 3 }: ProjectComponentProps) => {
 
       {/* Mobile text below card */}
       <div className="md:hidden pt-2 px-1 pb-1">
-        <p className="font-black uppercase text-sm leading-tight tracking-wide">
+        <p className="font-black uppercase text-base leading-tight tracking-wide">
           {project.title}
         </p>
         {project.category && (
-          <p className="font-serif italic text-muted-foreground text-xs">{project.category}</p>
+          <p className="font-serif italic text-muted-foreground text-sm">{project.category}</p>
         )}
       </div>
     </div>
